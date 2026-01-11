@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h1 align="center">Hi there, I'm <a href="https://timo.seyfarth.dev" target="_blank">Timo</a>! <img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif" width="35px"></h1>
+  <h1 align="center">Hey there, I'm <a href="https://timo.seyfarth.dev" target="_blank">Timo</a>! <img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif" width="35px"></h1>
 
   <p>
     <b>Full-Stack Developer based in Germany <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Animated-Flag-Germany.gif" width="25px"></b><br>
