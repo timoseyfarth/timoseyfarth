@@ -18,10 +18,11 @@ body:
           required: true
 
   # --- FUN / OPTIONAL SECTION ---
-   - type: markdown
+  - type: markdown
     attributes:
       value: |
         ---
+        ### Optional Fun Section
         Everything below this is optional and just for fun. These inputs will be displayed on hover of your pixel.
 
   - type: dropdown
@@ -33,7 +34,7 @@ body:
         - "VS Code (I love plugins more than code)"
         - "JetBrains IDE (My laptop fan is a jet engine)"
         - "Vim / Neovim (I don't know how to exit)"
-        - "Eclipse (When is tbe last time you cleaned your workspace?)"
+        - "Eclipse (When is the last time you cleaned your workspace?)"
         - "Notepad (I am a psychopath)"
     validations:
       required: false
@@ -51,7 +52,7 @@ body:
     id: mood_color
     attributes:
       label: What is your Hex Color today? (Optional)
-      description: Note: This will not be the color of your pixel :)
+      description: "Note: This will not be the color of your pixel :)"
       placeholder: "#......"
     validations:
       required: false
