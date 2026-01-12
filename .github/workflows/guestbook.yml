@@ -1,0 +1,43 @@
+name: Guestbook Webhook
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  process_guestbook:
+    if: contains(github.event.issue.labels.*.name, 'guestbook')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Parse Issue Form
+        uses: stefanbuck/github-issue-parser@v3
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/guestbook.yml
+
+      - name: Trigger Server Webhook
+        run: |
+          curl -X POST https://your-server.com/api/guestbook \
+          -H "Content-Type: application/json" \
+          -H "X-API-KEY: ${{ secrets.GUESTBOOK_API_KEY }}" \
+          -d '{
+            "username": "${{ github.event.issue.user.login }}",
+            "avatar_url": "${{ github.event.issue.user.avatar_url }}",
+            "editor": "${{ steps.issue-parser.outputs.issueparser_editor_war }}",
+            "quote": "${{ steps.issue-parser.outputs.issueparser_quote }}",
+            "mood_color": "${{ steps.issue-parser.outputs.issueparser_mood_color }}"
+          }'
+
+      - name: Close Issue
+        uses: peter-evans/close-issue@v3
+        with:
+          comment: "Success! You have been pixelated. [Check the profile](https://github.com/timoseyfarth) in a few seconds to see your spot on the grid!"
+          labels: |
+            guestbook
+            processed
