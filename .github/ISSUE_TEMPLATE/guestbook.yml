@@ -1,0 +1,57 @@
+name: 🖊️ Sign the Guestbook
+description: Add your avatar to my pixel grid!
+title: "Guestbook Signature"
+labels: ["guestbook"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Welcome to the Grid! 
+        By submitting this issue, a GitHub Action will automatically fetch your avatar and add it to the pixel grid on my profile.
+  
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmation
+      options:
+        - label: I hereby consent to be pixelated! 👾
+          required: true
+
+  # --- FUN / OPTIONAL SECTION ---
+   - type: markdown
+    attributes:
+      value: |
+        ---
+        Everything below this is optional and just for fun. These inputs will be displayed on hover of your pixel.
+
+  - type: dropdown
+    id: editor_war
+    attributes:
+      label: The Editor War (Optional)
+      description: How do you write your code?
+      options:
+        - "VS Code (I love plugins more than code)"
+        - "JetBrains IDE (My laptop fan is a jet engine)"
+        - "Vim / Neovim (I don't know how to exit)"
+        - "Eclipse (When is tbe last time you cleaned your workspace?)"
+        - "Notepad (I am a psychopath)"
+    validations:
+      required: false
+  
+  - type: input
+    id: quote
+    attributes:
+      label: Drop a Quote (Optional)
+      description: A short wisdom, a joke, or your favorite "it works on my machine" moment.
+      placeholder: "Real programmers count from 0."
+    validations:
+      required: false
+
+  - type: input
+    id: mood_color
+    attributes:
+      label: What is your Hex Color today? (Optional)
+      description: Note: This will not be the color of your pixel :)
+      placeholder: "#......"
+    validations:
+      required: false
