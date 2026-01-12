@@ -23,7 +23,7 @@ jobs:
 
       - name: Trigger Server Webhook
         run: |
-          curl -X POST https://your-server.com/api/guestbook \
+          curl -X POST ${{ secrets.GUESTBOOK_API_URL }} \
           -H "Content-Type: application/json" \
           -H "X-API-KEY: ${{ secrets.GUESTBOOK_API_KEY }}" \
           -d '{
