@@ -111,7 +111,7 @@ When you open an issue, a GitHub Action triggers a webhook to my server. The bac
 
   
   <p align="center">
-    <i>Click the grid to explore the interactive canvas in a new tab. <b>Hover</b> a pixel to reveal the user's <b>quote</b> (if they entered one).</i>
+    <i>Click the grid to explore the interactive canvas in a new tab. Then <b>hover</b> a pixel to reveal the user's <b>quote</b> (if they entered one).</i>
   </p>
   </br>
 
