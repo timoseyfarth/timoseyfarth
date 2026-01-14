@@ -6,8 +6,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Welcome to the Grid! 
-        By submitting this issue, a GitHub Action will automatically fetch your avatar and add it to the pixel grid on my profile.
+        ## Add your avatar to the pixel grid on [my GitHub profile](https://github.com/timoseyfarth)!
+        
+        By submitting this issue, a GitHub Action will automatically fetch your avatar, downscale it to one pixel and add it to the guestbook [my GitHub profile](https://github.com/timoseyfarth).
   
   - type: checkboxes
     id: terms
@@ -23,7 +24,7 @@ body:
       value: |
         ---
         ### Optional Fun Section
-        Everything below this is optional and just for fun. These inputs will be displayed on hover of your pixel.
+        Everything below this is optional and just for fun. Some inputs may be displayed on hover of your pixel.
 
   - type: dropdown
     id: editor_war
@@ -45,14 +46,5 @@ body:
       label: Drop a Quote (Optional)
       description: A short wisdom, a joke, or your favorite "it works on my machine" moment.
       placeholder: "Real programmers count from 0."
-    validations:
-      required: false
-
-  - type: input
-    id: mood_color
-    attributes:
-      label: What is your Hex Color today? (Optional)
-      description: "Note: This will not be the color of your pixel :)"
-      placeholder: "#......"
     validations:
       required: false
