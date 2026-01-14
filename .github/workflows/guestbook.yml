@@ -21,9 +21,20 @@ jobs:
         with:
           template-path: .github/ISSUE_TEMPLATE/guestbook.yml
 
+      - name: Processing comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Processing your request... ⚙️
+            The server is currently pixelating your avatar and updating the grid!
+            Give it a few seconds.
+
       - name: Trigger Server Webhook
+        id: server_request
+        continue-on-error: true 
         run: |
-          curl -X POST ${{ secrets.GUESTBOOK_API_URL }} \
+          curl -s --fail -X POST ${{ secrets.GUESTBOOK_API_URL }} \
           -H "Content-Type: application/json" \
           -H "X-API-KEY: ${{ secrets.GUESTBOOK_API_KEY }}" \
           -d '{
@@ -31,13 +42,34 @@ jobs:
             "avatar_url": "${{ github.event.issue.user.avatar_url }}",
             "editor": "${{ steps.issue-parser.outputs.issueparser_editor_war }}",
             "quote": "${{ steps.issue-parser.outputs.issueparser_quote }}",
-            "mood_color": "${{ steps.issue-parser.outputs.issueparser_mood_color }}"
-          }'
+            "mood_color": "${{ steps.issue-parser.outputs.issueparser_mood_color }}",
+            "is_anonymous": "${{ steps.issue-parser.outputs.issueparser_anonymous_mode }}"
+          }' > response.json
+
+          echo "Server Response:"
+          cat response.json
+
+          SERVER_MSG=$(jq -r '.message // "Unknown error."' response.json)
+          echo "reply_message=$SERVER_MSG" >> "$GITHUB_OUTPUT"
+
+      - name: Handle Failure
+        if: steps.server_request.outcome == 'failure'
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            ### 🛑 Error
+            Something went wrong while communicating with the backend server. 
+            This could be a temporary downtime or a rate-limit issue. 
+            
+            Please try again later!
 
       - name: Close Issue
+        if: always()
         uses: peter-evans/close-issue@v3
         with:
-          comment: "Success! You have been pixelated. [Check the profile](https://github.com/timoseyfarth) in a few seconds to see your spot on the grid!"
+          comment: |
+            ${{ steps.server_request.outcome == 'success' && steps.server_request.outputs.reply_message || 'Issue closed due to processing error.' }}
           labels: |
             guestbook
-            processed
+            ${{ steps.server_request.outcome == 'success' && 'processed' || 'failed' }}
