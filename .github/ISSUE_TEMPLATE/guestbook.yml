@@ -58,12 +58,10 @@ body:
     validations:
       required: false
 
-
----
-
 - type: markdown
     attributes:
       value: |
+        ---
         ### Usage Information
         
         This guestbook is **fully automated** by a [backend server](https://github.com/timoseyfarth/guestbook-pixel-server).
