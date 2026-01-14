@@ -17,6 +17,15 @@ body:
       options:
         - label: I hereby consent to be pixelated! 👾
           required: true
+          
+  - type: checkboxes
+    id: anonymous_mode
+    attributes:
+      label: Privacy Preference (Optional)
+      options:
+        - label: Make me anonymous (hide my username on hover on the grid).
+    validations:
+      required: false
 
   # --- FUN / OPTIONAL SECTION ---
   - type: markdown
