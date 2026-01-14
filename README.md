@@ -115,7 +115,7 @@ When you open an issue, a GitHub Action triggers a webhook to my server. The bac
   </p>
   </br>
 
-  <a href="https://github.com/timoexample/repo/issues/new?template=guestbook.yml" target="_blank">
+  <a href="https://github.com/timoseyfarth/timoseyfarth/issues/new?template=guestbook.yml" target="_blank">
     <img src="https://img.shields.io/badge/Create%20issue%20to%20automatically%20add%20your%20pixel-7F52FF?style=for-the-badge&logo=accenture&logoColor=white" alt="Sign the Guestbook">
   </a>
 </div>
