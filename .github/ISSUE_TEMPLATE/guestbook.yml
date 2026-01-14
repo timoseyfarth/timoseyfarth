@@ -57,3 +57,17 @@ body:
       placeholder: "Real programmers count from 0."
     validations:
       required: false
+
+
+---
+
+- type: markdown
+    attributes:
+      value: |
+        ### Usage Information
+        
+        This guestbook is **fully automated** by a [backend server](https://github.com/timoseyfarth/guestbook-pixel-server).
+        
+        * **To Sign:** Simply fill out the fields and submit.
+        * **To Update:** You have a new profile picture, want to change your quote, or editor choice? **Just submit a new issue.** The system will automatically update your existing entry on the grid.
+        * **To Remove:** If you want your data completely deleted, please contact me directly via [email](mailto:timo@seyfarth.dev).
