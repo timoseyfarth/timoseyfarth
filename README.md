@@ -10,57 +10,6 @@
   <br />
 </div>
 
-### ✨ Development Philosophy
-
-<table>
-  <tr>
-    <td width="50%">
-      <p align="center"><b>UX (User Experience)</b></p>
-      <p align="center">
-        I believe that, these days, hardware resources are rarely the bottleneck. <b>Design and user experience are</b>. My goal is to create flawless, intuitive and playful user experiences.
-      </p>
-    </td>
-    <td width="50%">
-      <p align="center"><b>DX (Developer Experience)</b></p>
-      <p align="center">
-        I build systems that help me build systems. <b>Today's work solves tomorrow's problems</b>. I use structured, modular and reusable code wherever possible.
-      </p>
-    </td>
-  </tr>
-</table>
-
-```kotlin
-object Timo {
-    fun codingPreferences(lang: Language): String = return when {
-        lang == Language.KOTLIN -> {
-            lang.syntacticSugar()
-            "💖 Absolute favorite. DX peak."
-        },
-        lang == Language.JAVA -> {
-            lang.histories().filter { it.is("Minecraft Plugins") }
-            "☕ Where it all began. Respect roots."
-        },
-        lang == Language.PYTHON -> {
-            lang.automateEverything()
-            "🐍 Quick scripts & prototyping. Love the ease."
-        },
-        lang.isFrontend() -> {
-            lang.applyCleanDesign()
-            "🎨 UI / UX matters! Let's make it beautiful."
-        },
-        !lang.hasGarbageCollection() || lang == Language.C -> {
-            lang.panicMode()
-            "🌿 Pointers & MMM: Life is too short..."
-        },
-        else -> {
-            "🛠️ Another tool in the belt."
-        }
-    }
-}
-```
-
----
-
 ### 📦 Milestone Projects
 
 <table width="100%">
@@ -147,6 +96,80 @@ object Timo {
   </tr>
 </table>
 
+---
+
+### 📕 Community Guestbook
+
+This is a pixel grid guestbook for my GitHub profile. Every pixel represents a unique visitor who "signed" into my digital guestbook.
+When you open an issue, a GitHub Action triggers a webhook to my server. The backend then downscales your profile picture to one pixel and injects it into the SVG image. After a few seconds it will appear here:
+
+<div align="center">  
+  </br>
+  <a href="https://timo.seyfarth.dev/github/guestbook.svg" target="_blank">
+    <img src="https://timo.seyfarth.dev/github/guestbook.svg" width="600" alt="Guestbook Grid">
+  </a>
+
+  
+  <p align="center">
+    <i>Click the grid to explore the interactive canvas in a new tab. <b>Hover</b> a pixel to reveal the user's <b>quote</b> (if they entered one).</i>
+  </p>
+  </br>
+
+  <a href="https://github.com/timoexample/repo/issues/new?template=guestbook.yml" target="_blank">
+    <img src="https://img.shields.io/badge/Create%20issue%20to%20automatically%20add%20your%20pixel-7F52FF?style=for-the-badge&logo=accenture&logoColor=white" alt="Sign the Guestbook">
+  </a>
+</div>
+
+---
+
+### ✨ Development Philosophy
+
+<table>
+  <tr>
+    <td width="50%">
+      <p align="center"><b>UX (User Experience)</b></p>
+      <p align="center">
+        I believe that, these days, hardware resources are rarely the bottleneck. <b>Design and user experience are</b>. My goal is to create flawless, intuitive and playful user experiences.
+      </p>
+    </td>
+    <td width="50%">
+      <p align="center"><b>DX (Developer Experience)</b></p>
+      <p align="center">
+        I build systems that help me build systems. <b>Today's work solves tomorrow's problems</b>. I use structured, modular and reusable code wherever possible.
+      </p>
+    </td>
+  </tr>
+</table>
+
+```kotlin
+object Timo {
+    fun codingPreferences(lang: Language): String = return when {
+        lang == Language.KOTLIN -> {
+            lang.syntacticSugar()
+            "💖 Absolute favorite. DX peak."
+        },
+        lang == Language.JAVA -> {
+            lang.histories().filter { it.is("Minecraft Plugins") }
+            "☕ Where it all began. Respect roots."
+        },
+        lang == Language.PYTHON -> {
+            lang.automateEverything()
+            "🐍 Quick scripts & prototyping. Love the ease."
+        },
+        lang.isFrontend() -> {
+            lang.applyCleanDesign()
+            "🎨 UI / UX matters! Let's make it beautiful."
+        },
+        !lang.hasGarbageCollection() || lang == Language.C -> {
+            lang.panicMode()
+            "🌿 Pointers & MMM: Life is too short..."
+        },
+        else -> {
+            "🛠️ Another tool in the belt."
+        }
+    }
+}
+```
 
 ---
 
@@ -184,7 +207,3 @@ object Timo {
   <img src="https://img.shields.io/badge/and_much_more...-151515?style=for-the-badge&logo=more&logoColor=white" />
 
 </div>
-
-### 📕 Guestbook Pixel grid
-
-Released in the future... Stay tuned :)
