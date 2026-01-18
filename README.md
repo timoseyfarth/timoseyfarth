@@ -147,23 +147,23 @@ object Timo {
         lang == Language.KOTLIN -> {
             lang.syntacticSugar()
             "💖 Absolute favorite. DX peak."
-        },
+        }
         lang == Language.JAVA -> {
             lang.histories().filter { it.is("Minecraft Plugins") }
             "☕ Where it all began. Respect roots."
-        },
+        }
         lang == Language.PYTHON -> {
             lang.automateEverything()
             "🐍 Quick scripts & prototyping. Love the ease."
-        },
+        }
         lang.isFrontend() -> {
             lang.applyCleanDesign()
             "🎨 UI / UX matters! Let's make it beautiful."
-        },
+        }
         !lang.hasGarbageCollection() || lang == Language.C -> {
             lang.panicMode()
             "🌿 Pointers & MMM: Life is too short..."
-        },
+        }
         else -> {
             "🛠️ Another tool in the belt."
         }
