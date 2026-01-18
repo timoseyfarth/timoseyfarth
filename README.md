@@ -55,7 +55,7 @@
   <tr>
     <td width="33.3%" align="center" valign="top">
       <br>
-      <a href="https://spotify-code.seyfarth.dev" target="_blank"><b>🎵 Spotify Code Generator</b></a>
+      <a href="https://spotify-code.seyfarth.dev" target="_blank"><b>🎵 Spotify Code Generator |<ins>↗</ins></b></a>
       <p>Turn any Spotify link into a scannable, 3D-printable tag.</p>
     </td>
     <td width="33.3%" align="center" valign="top">
